@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === EKOA DESIGN SYSTEM COLORS (HSL) === */
+    --background: 90 16% 97%;          /* #F6F8F3 Off-white natural */
+    --foreground: 0 0% 4%;             /* #0A0A0A Preto */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+
+    --primary: 158 56% 16%;            /* #12402F Verde Floresta (Brand Dark) */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 98 79% 57%;           /* #7CE83C Verde Lime (CTA/Destaque) */
+    --secondary-foreground: 0 0% 6%;
+
+    --muted: 100 12% 92%;              /* névoa verde clara */
+    --muted-foreground: 150 6% 38%;
+
+    --accent: 98 79% 57%;              /* Lime */
+    --accent-foreground: 158 56% 16%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 100 10% 89%;
+    --input: 100 10% 89%;
+    --ring: 158 56% 16%;
+
+    --radius: 0.75rem;
+
+    --color-aqua: 98 79% 57%;          /* legacy alias -> lime */
+
+    /* === EKOA CUSTOM TOKENS === */
+    --ekoa-forest: 158 56% 16%;        /* Verde Floresta */
+    --ekoa-forest-dark: 158 58% 11%;   /* Verde ainda mais escuro (hover) */
+    --ekoa-lime: 98 79% 57%;           /* Verde Lime */
+    --ekoa-lime-dark: 98 65% 47%;      /* Lime hover */
+    --ekoa-black: 0 0% 4%;
+    --ekoa-white: 0 0% 100%;
+
+    /* === GRADIENTS === */
+    --gradient-brand: linear-gradient(135deg, #12402F 0%, #1E6B4A 100%);
+    --gradient-ocean: linear-gradient(135deg, #0C2E22 0%, #12402F 100%);
+    --gradient-subtle: linear-gradient(160deg, #7CE83C 0%, #34c46a 55%, #ffffff 100%);
+
+    /* === SHADOWS === */
+    --shadow-sm: 0 1px 3px rgba(18,64,47,0.10), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 16px rgba(18,64,47,0.14), 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(18,64,47,0.20), 0 4px 12px rgba(0,0,0,0.10);
+    --shadow-xl: 0 16px 48px rgba(18,64,47,0.26), 0 6px 16px rgba(0,0,0,0.12);
+    --shadow-glow: 0 0 24px rgba(124,232,60,0.45);
+
+    /* === TRANSITIONS === */
+    --transition-base: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-enter: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* === FONTS === */
+    --font-display: 'Poppins', 'Trebuchet MS', sans-serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-script: 'Pacifico', cursive;
+
+    /* Sidebar */
+    --sidebar-background: 158 56% 12%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 98 79% 57%;
+    --sidebar-primary-foreground: 158 56% 16%;
+    --sidebar-accent: 158 40% 20%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 158 30% 22%;
+    --sidebar-ring: 98 79% 57%;
+  }
+
+  .dark {
+    --background: 158 45% 5%;
+    --foreground: 0 0% 96%;
+
+    --card: 158 40% 8%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 158 40% 8%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 98 79% 57%;
+    --primary-foreground: 158 56% 12%;
+
+    --secondary: 158 40% 16%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 158 30% 14%;
+    --muted-foreground: 150 8% 60%;
+
+    --accent: 98 79% 57%;
+    --accent-foreground: 158 56% 12%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 158 30% 16%;
+    --input: 158 30% 16%;
+    --ring: 98 79% 57%;
+
+    --sidebar-background: 158 50% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 98 79% 57%;
+    --sidebar-primary-foreground: 158 56% 12%;
+    --sidebar-accent: 158 40% 14%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 158 30% 16%;
+    --sidebar-ring: 98 79% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gradient-brand {
+    background: var(--gradient-brand);
+  }
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  .gradient-card-green {
+    background: linear-gradient(135deg, hsl(98 70% 88%), hsl(150 45% 90%));
+  }
+  .gradient-card-yellow {
+    background: linear-gradient(135deg, hsl(140 55% 90%), hsl(98 60% 86%));
+  }
+  .font-script {
+    font-family: var(--font-script);
+  }
+  .shadow-brand-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  .shadow-brand-md {
+    box-shadow: var(--shadow-md);
+  }
+  .shadow-brand-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  .shadow-brand-xl {
+    box-shadow: var(--shadow-xl);
+  }
+  .shadow-brand-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}

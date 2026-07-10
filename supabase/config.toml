@@ -1,0 +1,7 @@
+project_id = "njbswxvpxsijdgmtxvfw"
+
+[functions.notify-new-reservation]
+verify_jwt = false
+
+[functions.phone-signin]
+verify_jwt = false

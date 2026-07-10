@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 100" fill="none">
+  <text x="0" y="78" font-family="Poppins, 'Trebuchet MS', Arial, sans-serif" font-weight="800" font-size="92" letter-spacing="1" fill="#12402F">EK</text>
+  <!-- lightning bolt replacing the "O" -->
+  <path d="M150 12 L126 54 L143 54 L132 88 L170 42 L152 42 L163 12 Z" fill="#12402F"/>
+  <text x="176" y="78" font-family="Poppins, 'Trebuchet MS', Arial, sans-serif" font-weight="800" font-size="92" letter-spacing="1" fill="#12402F">A</text>
+</svg>

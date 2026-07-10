@@ -1,0 +1,4 @@
+INSERT INTO public.products (name, description, price, category, is_active) VALUES
+  ('Lavagem Anti-Ferrugem', 'Limpeza completa com tratamento anti-ferrugem para proteger sua e-bike contra a maresia e prolongar a vida útil dos componentes metálicos.', 89.90, 'service', true),
+  ('Troca de Pneus', 'Substituição de pneus desgastados por pneus novos de alta performance. Inclui balanceamento e calibragem.', 149.90, 'service', true),
+  ('Instalação de Rastreador', 'Instalação profissional de rastreador GPS discreto na sua e-bike. Acompanhe a localização em tempo real pelo celular.', 199.90, 'service', true);

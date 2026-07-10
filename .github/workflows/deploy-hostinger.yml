@@ -1,0 +1,53 @@
+name: Deploy Sooly para Hostinger
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar dependências
+      run: npm ci
+
+    - name: Build da aplicação
+      run: npm run build
+
+    - name: Preparar arquivos para deploy
+      run: |
+        echo "📦 Arquivos para deploy:"
+        ls -lh dist/ | head -20
+        echo "---"
+        echo "✅ Build concluído!"
+
+    - name: Deploy para Hostinger
+      uses: SamKirkland/FTP-Deploy-Action@4.3.4
+      with:
+        server: ${{ secrets.HOSTINGER_SERVER }}
+        username: ${{ secrets.HOSTINGER_USERNAME }}
+        password: ${{ secrets.HOSTINGER_PASSWORD }}
+        local-dir: ./dist/
+        server-dir: /public_html/app.sooly.com.br/
+
+    - name: Verificar Deploy
+      if: success()
+      run: |
+        echo "✅ Deploy concluído com sucesso!"
+        echo "🔗 Site ao vivo em: https://app.sooly.com.br"
+        echo "📊 Verifique em alguns minutos para propagação"
+
+    - name: Notificar falha
+      if: failure()
+      run: |
+        echo "❌ Deploy falhou!"
+        echo "Verifique as credenciais de FTP/SFTP no GitHub Secrets"

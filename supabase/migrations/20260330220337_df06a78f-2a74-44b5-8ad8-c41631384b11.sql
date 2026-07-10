@@ -1,0 +1,1 @@
+UPDATE public.spaces SET is_active = false, updated_at = now() WHERE model_code = 'X1';
