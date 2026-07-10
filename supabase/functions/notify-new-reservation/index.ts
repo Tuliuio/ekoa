@@ -48,7 +48,7 @@ Deno.serve(async (req) => {
       ? `\n⏰ <b>Horário alternativo solicitado: ${customTimeMatch[1].trim()}</b> ← requer confirmação`
       : '';
 
-    const text = `🚲 <b>Nova reserva Sooly</b>
+    const text = `🚲 <b>Nova reserva Ekoa</b>
 👤 ${userName}${userPhone ? ` (${userPhone})` : ''}
 📍 ${r.delivery_city || '—'}${r.delivery_neighborhood ? ' / ' + r.delivery_neighborhood : ''}
 🏠 ${r.delivery_address || '—'}

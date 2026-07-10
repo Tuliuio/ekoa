@@ -44,7 +44,7 @@ Deno.serve(async (req) => {
     const fmt = (d: string) => new Date(d).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
     const waPhone = rawPhone ? String(rawPhone).replace(/\D/g, '') : null;
     const waLink = waPhone ? `<a href="https://wa.me/${waPhone}">wa.me/${waPhone}</a>` : '—';
-    const text = `👤 <b>Novo usuário Sooly</b>
+    const text = `👤 <b>Novo usuário Ekoa</b>
 📝 ${profile.full_name || '—'}
 📱 ${waLink}
 🆔 <code>${profile.id}</code>
